@@ -1,7 +1,13 @@
-const { dailyData } = require("./lib/dailyData");
+const { dailyData, playerData } = require("./lib/dailyData");
 
-let count = 100;
-while (count < 10000) {
-  dailyData(count);
-  count = count + 100;
+// let count = 100;
+// while (count < 10000) {
+//   dailyData(count);
+//   count = count + 100;
+// }
+
+function getData() {
+  playerData();
 }
+
+getData();
