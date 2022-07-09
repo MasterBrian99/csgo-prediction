@@ -1,4 +1,5 @@
-const { dailyData, playerData } = require("./lib/dailyData");
+const { dailyData, playerData } = require("./lib/playerData");
+const { teamDataCsv, getTopPlayerList } = require("./lib/teamData");
 
 // let count = 100;
 // while (count < 10000) {
@@ -7,7 +8,7 @@ const { dailyData, playerData } = require("./lib/dailyData");
 // }
 
 function getData() {
-  playerData();
+  teamDataCsv();
 }
 
 getData();

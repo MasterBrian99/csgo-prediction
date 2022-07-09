@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+{#    <link rel="stylesheet" href="./css/main.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.min.css') }}">
+
 </head>
 <body>
-$END$
+ {% include "base/header.html" %}
+   <div class="home pt-20 text-white relative">
+       <div class="absolute home-background">
+        <div class="w-full h-full  home-background-layer flex justify-center items-center flex-col">
+            <h1 class="text-8xl font-bold">COUNTER STRIKE</h1>
+            <h2 class="text-4xl font-bold">GLOBAL OFFENSIVE</h2>
+        </div>
+       </div>
+    <div class="container w-full mx-auto ">
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+    </div>
+   </div>
 </body>
 </html>

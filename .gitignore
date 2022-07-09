@@ -3,3 +3,7 @@
 chromedriver
 */chrome
 newOut.csv
+/web-app/bin
+/web-app/lib
+/web-app/__pycache__
+/web-app/share

@@ -17,6 +17,7 @@ const csvWriter = createCsvWriter({
     { id: "kd_ratio", title: "kd_ratio" },
     { id: "rating", title: "rating" },
     { id: "total_kills", title: "total_kills" },
+    { id: "image_url", title: "image_url" },
   ],
 });
 
@@ -77,7 +78,8 @@ const playerData = async () => {
         kd_difference: $(this).find("td.kdDiffCol.won").text().replace("+", ""),
         kd_ratio: $(this).find("td:nth-child(6)").text().replace("+", ""),
         rating: $(this).find("td:nth-child(7)").text().replace("+", ""),
-        total_kills: totalKill,
+        total_kills: totalKill.kill,
+        image_url: totalKill.img_url,
       };
       pushToArray(obj);
 
@@ -103,10 +105,17 @@ async function getTotalKills(url) {
   const kill = $(
     "div.col:nth-child(1) > div:nth-child(1) > span:nth-child(2)"
   ).text();
-  tempKill = kill;
-  return kill;
+  const img_url = $(
+    "html body.colsCustom1101 div.bgPadding div.widthControl div.colCon div.contentCol div.stats-section.stats-player.stats-player-overview div.playerSummaryStatBox div.summaryBodyshotContainer img.summaryBodyshot"
+  ).attr("src");
+
+  return {
+    kill: kill,
+    img_url: img_url,
+  };
 }
 
 module.exports = {
   playerData,
 };
+//

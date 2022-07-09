@@ -1,0 +1,20 @@
+.home{
+    background-color: $primary-color;
+    height: 200vh;
+
+    &-background{
+        background-image: url("../../img/csgo-ak-47-fire-serpent-skin-hd-wallpaper-1920x1200-46.jpg");
+        width:100%; /*width of your image*/
+        height:100vh; /*height of your image*/
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &-layer{
+            background-color:#192233d3;
+
+            & h1{
+                color: $base-color;
+            }
+        }
+    }
+}

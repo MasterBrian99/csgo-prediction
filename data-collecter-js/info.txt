@@ -1,0 +1,1 @@
+team_name,country,url,maps_played,kd_difference,kd_ratio,rating
