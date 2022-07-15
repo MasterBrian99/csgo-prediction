@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    {#    <link rel="stylesheet" href="./css/main.min.css" />#}
+    {#
+    <link rel="stylesheet" href="./css/main.min.css" />
+    #}
     <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static',filename='css/main.min.css') }}"
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/main.min.css') }}"
     />
-
-</head>
-<body>
-{% include "base/header.html" %}
-<div class="team pt-20 text-white relative flex justify-center">
-    <div class="container w-full pt-10">
+  </head>
+  <body>
+    {% include "base/header.html" %}
+    <div class="team pt-20 text-white relative flex justify-center">
+      <div class="container w-full pt-10">
         <h3
-                class="main-title text-3xl font-bold border-l-8 border-cyan-500 pl-2"
+          class="main-title text-3xl font-bold border-l-8 border-cyan-500 pl-2"
         >
-            Winner Prediction
+          Winner Prediction
         </h3>
         <form method="post" action="/team">
-            <div
-                    class="w-full border-2 border-cyan-100 rounded-lg py-4 px-6 text-black mt-10"
-            >
-                <div class="mr-4">
-                    <label
-                            for="small"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                    >Small select</label
-                    >
-                    <select
-                            name="country_1"
-                            id="small"
-                            class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    >
-                        <option selected>Choose a team 1</option>
-                        <option value="Rugratz">Rugratz</option>
-                        <option value="Natus Vincere">Natus Vincere</option>
-                        <option value="Vitality">Vitality</option>
-                        <option value="Astralis">Astralis</option>
-                    </select>
-                </div>
-                <div class="mr-4">
-                    <label
-                            for="small"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                    >Small select</label
-                    >
-                    <select
-                            name="country_2"
-                            id="small"
-                            class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    >
-                        <option selected>Choose a team 2</option>
-                        <option value="Rugratz">Rugratz</option>
-                        <option value="Natus Vincere">Natus Vincere</option>
-                        <option value="Vitality">Vitality</option>
-                        <option value="Astralis">Astralis</option>
-                    </select>
-                </div>
-                <div class="mr-4">
-                    <label
-                            for="small"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                    >Small select</label
-                    >
-                    <select
-                            name="map"
-                            id="small"
-                            class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    >
-                        <option selected>Choose a country</option>
-                        <option value="Mirage">Mirage</option>
-                        <option value="Dust2">Dust2</option>
-                        <option value="Inferno">Inferno</option>
-                        <option value="Nuke">Nuke</option>
-                    </select>
-                </div>
-                <button
-                        type="submit"
-                        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                >
-                    Alternative
-                </button>
+          <div
+            class="w-full border-2 border-cyan-100 rounded-lg py-4 px-6 text-black mt-10"
+          >
+            <div class="mr-4">
+              <label
+                for="small"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                >Small select</label
+              >
+              <select
+                name="country_1"
+                id="small"
+                class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected>Choose a team 1</option>
+                <option value="Rugratz">Rugratz</option>
+                <option value="Natus Vincere">Natus Vincere</option>
+                <option value="Vitality">Vitality</option>
+                <option value="Astralis">Astralis</option>
+              </select>
             </div>
+            <div class="mr-4">
+              <label
+                for="small"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                >Small select</label
+              >
+              <select
+                name="country_2"
+                id="small"
+                class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected>Choose a team 2</option>
+                <option value="Rugratz">Rugratz</option>
+                <option value="Natus Vincere">Natus Vincere</option>
+                <option value="Vitality">Vitality</option>
+                <option value="Astralis">Astralis</option>
+              </select>
+            </div>
+            <div class="mr-4">
+              <label
+                for="small"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                >Small select</label
+              >
+              <select
+                name="map"
+                id="small"
+                class="block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected>Choose a country</option>
+                <option value="Mirage">Mirage</option>
+                <option value="Dust2">Dust2</option>
+                <option value="Inferno">Inferno</option>
+                <option value="Nuke">Nuke</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Alternative
+            </button>
+          </div>
         </form>
 
-        <div>
-            <h1>Hello</h1>
-
-            <h2 id="result">{{ ButtonPressed }}</h2>
+        <div class="flex justify-center pt-20">
+            <p id="resultTrigger" style="display: none">{{ ButtonPressed }}</p>
+          <div id="resultDiv">
+            <h3 class="text-4xl text-gray-300">
+              Winning Team : <span class="font-bold">{{ data.team }}</span>
+            </h3>
+            <h3 class="text-4xl text-gray-300">
+              Accuracy : <span class="font-bold">{{ data.accuracy }} %</span>
+            </h3>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<script>
-    const result = document.getElementById("result")
-    console.log(result.innerText)
-    if (result.innerText === "hello") {
-        console.log("nothing")
-    } else {
-        console.log("result came")
-    }
-</script>
-</body>
+    <script>
+      const resultDiv=document.getElementById('resultDiv')
+      const resultTrigger=document.getElementById('resultTrigger')
+      if (resultTrigger.innerText==='hello'){
+          console.log("asd")
+          resultDiv.style.display='none'
+      }
+    </script>
+  </body>
 </html>
