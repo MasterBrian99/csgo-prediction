@@ -37,6 +37,58 @@
             {% endfor %}
 
         </div>
+
+    <div class="overflow-x-auto relative">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-12">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                   Name
+                </th>
+                <th scope="col" class="py-3 px-6">
+                Country
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Total Maps
+                </th>
+                <th scope="col" class="py-3 px-6">
+                 Total Rounds
+                </th>
+                 <th scope="col" class="py-3 px-6">
+                 Total Kills
+                </th>
+                 <th scope="col" class="py-3 px-6">
+               Ratings
+                </th>
+            </tr>
+        </thead>
+  <tbody>
+
+       {% for foo in player_table %}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{ foo.name }}
+                </th>
+                <td class="py-4 px-6">
+                   {{ foo.country }}
+                </td>
+                <td class="py-4 px-6">
+                  {{ foo.maps_played }}
+                </td>
+                <td class="py-4 px-6">
+                   {{ foo.rounds_played }}
+                </td>
+              <td class="py-4 px-6">
+                   {{ foo.total_kills }}
+                </td>
+              <td class="py-4 px-6">
+                   {{ foo.rating }}
+                </td>
+            </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
     </div>
 </div>
 </body>

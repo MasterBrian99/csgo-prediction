@@ -8,7 +8,12 @@ const {
   topMatchList,
 } = require("./lib/teamData");
 
-const oldPaths = ["teamData.csv", "teamPlayerData.csv", "teamMatch.csv"];
+const oldPaths = [
+  "teamData.csv",
+  "teamPlayerData.csv",
+  "teamMatch.csv",
+  "newOut.csv",
+];
 
 const teamDataCSV = createCsvWriter({
   path: "teamData.csv",
@@ -49,6 +54,23 @@ const csvTopMatch = createCsvWriter({
   ],
 });
 
+const csvWriter = createCsvWriter({
+  path: "newOut.csv",
+  header: [
+    { id: "name", title: "name" },
+    { id: "country", title: "country" },
+    { id: "url", title: "url" },
+    { id: "teams", title: "teams" },
+    { id: "maps_played", title: "maps_played" },
+    { id: "rounds_played", title: "rounds_played" },
+    { id: "kd_difference", title: "kd_difference" },
+    { id: "kd_ratio", title: "kd_ratio" },
+    { id: "rating", title: "rating" },
+    { id: "total_kills", title: "total_kills" },
+    { id: "image_url", title: "image_url" },
+  ],
+});
+
 function getData() {
   oldPaths.forEach((e) => {
     try {
@@ -67,10 +89,15 @@ function getData() {
   csvTopMatch.writeRecords([]).then(() => {
     console.log("CSV file created");
   });
+  csvWriter.writeRecords([]).then(() => {
+    console.log("CSV file created");
+  });
   teamDataCsv()
     .then(() => {
       getTopPlayerList().then(() => {
-        topMatchList();
+        topMatchList().then((res) => {
+          playerData();
+        });
       });
     })
     .catch((err) => {
@@ -78,4 +105,8 @@ function getData() {
     });
 }
 
+
+function getData() {
+  playerData();
+}
 getData();
