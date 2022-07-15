@@ -7,3 +7,4 @@ newOut.csv
 /web-app/lib
 /web-app/__pycache__
 /web-app/share
+/web-app/xgboost
