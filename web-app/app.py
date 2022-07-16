@@ -27,6 +27,8 @@ def hello_world():  # put application's code here
     return render_template("index.html", img_url=full_filename)
 
 
+
+
 @app.route('/player')
 def plater_stats():
     global player_table
