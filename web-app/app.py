@@ -18,7 +18,7 @@ conn = mysql.connector.connect(host="127.0.0.1",
                                )
 PEOPLE_FOLDER = os.path.join('static')
 app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
-
+player_table=[]
 
 @app.route('/')
 def hello_world():  # put application's code here
@@ -29,6 +29,7 @@ def hello_world():  # put application's code here
 
 @app.route('/player')
 def plater_stats():
+    global player_table
     cursor = conn.cursor()
     cursor.execute("select * from player_stats")
     players = cursor.fetchall()
